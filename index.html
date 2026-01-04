@@ -11,9 +11,17 @@
             background: #000;
             color: #fff;
             display: flex;
+            flex-direction: column; /* Spaltenlayout für Überschrift + Countdown */
             justify-content: center;
             align-items: center;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        h1 {
+            font-size: 6vw;
+            margin: 0 0 20px 0; /* Abstand unter der Überschrift */
+            font-weight: 400;
+            letter-spacing: 0.1em;
         }
 
         #countdown {
@@ -24,6 +32,8 @@
     </style>
 </head>
 <body>
+
+<h1>Countdown</h1> <!-- Neue Überschrift -->
 
 <div id="countdown">--</div>
 
