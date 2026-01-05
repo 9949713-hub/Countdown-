@@ -17,37 +17,47 @@
         }
 
         body {
-            background-image: url("https://oaidalleapiprodscus.blob.core.windows.net/private/org-6F6v3SFXdQfR4Nz5LxYmg78B/user-k0HZH8AzgHJkFZC0n0vA0R3Y/img-WJ5C3WfM4CjpIHXXF90y7Hqe.png?st=2026-01-05T14%3A26%3A00Z&se=2026-01-05T16%3A26%3A00Z&sp=r&sv=2021-12-02&sr=b&sig=EXAMPLE") ;
+            background-image: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
         }
 
+        /* Overlay für bessere Lesbarkeit */
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(220, 245, 220, 0.7);
+            z-index: 0;
+        }
+
         h1 {
-            font-size: clamp(40px, 6vw, 80px);
-            margin: 0 0 40px 0;
+            font-size: clamp(30px, 6vw, 100px);
+            margin: 0 0 60px 0;
             font-weight: 300;
             letter-spacing: 0.2em;
             color: #0b4f1a;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.6);
+            z-index: 1;
         }
 
         #countdown {
-            font-size: clamp(60px, 8vw, 120px); /* moderat, nicht zu groß */
+            font-size: clamp(60px, 8vw, 150px);
             font-weight: 300;
             letter-spacing: 0.25em;
             color: #0b4f1a;
             white-space: nowrap;
+            z-index: 1;
+            padding: 0 20px; /* ursprünglicher Abstand */
             text-align: center;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.6);
-            padding: 0 20px;
         }
     </style>
 </head>
 <body>
 
 <h1>Countdown</h1>
+
 <div id="countdown">00 00 00 00</div>
 
 <script>
@@ -57,10 +67,12 @@
     function update() {
         const now = new Date();
         let diff = target - now;
+
         if (diff <= 0) {
             countdown.textContent = "00 00 00 00";
             return;
         }
+
         const d = Math.floor(diff / 86400000);
         diff %= 86400000;
         const h = Math.floor(diff / 3600000);
