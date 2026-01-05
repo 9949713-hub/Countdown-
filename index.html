@@ -24,12 +24,12 @@
             position: relative;
         }
 
-        /* leichtes Overlay für bessere Lesbarkeit */
+        /* leichtes Overlay für bessere Lesbarkeit, nur 20% deckend */
         body::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(220, 245, 220, 0.65);
+            background: rgba(220, 245, 220, 0.2);
             z-index: 0;
         }
 
