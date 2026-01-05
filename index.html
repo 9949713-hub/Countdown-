@@ -17,25 +17,25 @@
         }
 
         body {
-            background-image: url("https://images.unsplash.com/photo-1498842812179-c81beecf902c");
+            background-image: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
         }
 
-        /* leichtes Overlay für bessere Lesbarkeit */
+        /* helles grünes Overlay */
         body::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(200, 245, 200, 0.65);
+            background: rgba(220, 245, 220, 0.7);
             z-index: 0;
         }
 
         h1 {
-            font-size: 7vw;
-            margin: 0 0 70px 0;
+            font-size: 6vw;
+            margin: 0 0 80px 0;
             font-weight: 300;
             letter-spacing: 0.2em;
             color: #0b4f1a;
@@ -43,10 +43,11 @@
         }
 
         #countdown {
-            font-size: 12vw;
+            font-size: 11vw;
             font-weight: 300;
-            letter-spacing: 0.25em;
+            letter-spacing: 0.3em;
             color: #0b4f1a;
+            white-space: nowrap; /* bleibt in EINER REIHE */
             z-index: 1;
         }
     </style>
@@ -55,7 +56,7 @@
 
 <h1>Countdown</h1>
 
-<div id="countdown">--</div>
+<div id="countdown">00 00 00 00</div>
 
 <script>
     const target = new Date("2026-12-31T23:59:59");
