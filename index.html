@@ -24,7 +24,7 @@
             position: relative;
         }
 
-        /* helles grünes Overlay */
+        /* Overlay für bessere Lesbarkeit */
         body::before {
             content: "";
             position: absolute;
@@ -34,8 +34,8 @@
         }
 
         h1 {
-            font-size: 6vw;
-            margin: 0 0 80px 0;
+            font-size: clamp(30px, 6vw, 100px);
+            margin: 0 0 60px 0;
             font-weight: 300;
             letter-spacing: 0.2em;
             color: #0b4f1a;
@@ -43,12 +43,14 @@
         }
 
         #countdown {
-            font-size: 11vw;
+            font-size: clamp(60px, 8vw, 150px); /* skalierbar, max/min */
             font-weight: 300;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.25em;
             color: #0b4f1a;
-            white-space: nowrap; /* bleibt in EINER REIHE */
+            white-space: nowrap; /* in einer Reihe */
             z-index: 1;
+            padding: 0 20px; /* Abstand links/rechts */
+            text-align: center; /* zentriert */
         }
     </style>
 </head>
