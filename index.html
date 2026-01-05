@@ -17,7 +17,7 @@
         }
 
         body {
-            background-image: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6");
+            background-image: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1920&q=80");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -29,7 +29,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(220, 245, 220, 0.7);
+            background: rgba(220, 245, 220, 0.65);
             z-index: 0;
         }
 
@@ -43,21 +43,20 @@
         }
 
         #countdown {
-            font-size: clamp(60px, 8vw, 150px); /* skalierbar, max/min */
+            font-size: clamp(80px, 10vw, 200px); /* HIER Höher gemacht */
             font-weight: 300;
             letter-spacing: 0.25em;
             color: #0b4f1a;
-            white-space: nowrap; /* in einer Reihe */
+            white-space: nowrap;
             z-index: 1;
-            padding: 0 20px; /* Abstand links/rechts */
-            text-align: center; /* zentriert */
+            padding: 0 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
 <h1>Countdown</h1>
-
 <div id="countdown">00 00 00 00</div>
 
 <script>
@@ -67,12 +66,10 @@
     function update() {
         const now = new Date();
         let diff = target - now;
-
         if (diff <= 0) {
             countdown.textContent = "00 00 00 00";
             return;
         }
-
         const d = Math.floor(diff / 86400000);
         diff %= 86400000;
         const h = Math.floor(diff / 3600000);
